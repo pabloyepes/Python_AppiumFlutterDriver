@@ -50,6 +50,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'];
+  List<int> colorCodes = <int>[600, 500, 100, 200, 400, 300, 100, 800, 900, 1200, 1500, 1300, 1800, 1900, 2000];
 
   void _incrementCounter() {
     setState(() {
@@ -68,21 +70,17 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-              key: Key('counter'),
-            ),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+          padding: const EdgeInsets.all(8),
+          itemCount: entries.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              height: 50,
+              color: Colors.amber[colorCodes[index]],
+              child: Center(child: Text('Entry ${entries[index]}')),
+            );
+          }),
+
       floatingActionButton: FloatingActionButton(
         key: Key('increment'), // To pvidide a key to detect the elemenet
         onPressed: _incrementCounter,
