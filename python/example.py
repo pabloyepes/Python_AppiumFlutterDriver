@@ -51,6 +51,7 @@ driver.execute_script('flutter:scrollUntilVisible', finders['entry_g'], {
                       "item": finders['entry_o'], "dxScroll": 10, "dyScroll": -30})
 print(find_element(finders['entry_o']).text)
 
+# https://github.com/appium-userland/appium-flutter-driver/blob/ce2315acf28a3b92386779ecb9e7a45d62a3eca9/example/nodejs/src/index.js
 # scroll up
 driver.execute_script('flutter:scroll',finders['entry_o'], {"dx": 10, "dy": 300, "durationMilliseconds": 200, "frequency": 30})
 
