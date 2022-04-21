@@ -44,7 +44,9 @@ finders = {
 print(find_element(finders['total_push_label']))
 
 counter_label = find_element(finders['counter_label'])
+print("Test 1")
 increment_button = find_element(finders['increment_button'])
+print("Test 2")
 print(counter_label.text)
 increment_button.click()
 print(counter_label.text)
